@@ -1,36 +1,105 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
+    <div class="container">
+        <form class="col-md-8 mx-auto bg-light p-4">
 
-	<form id="form">
-		<h2>Ingreso al sistema</h3>
-		<input type="text" id="user" name="user" placeholder="Usuario" required>
-		<input type="password" id="pass" name="pass" placeholder="Contraseña" required>
-		<input type="submit" value="Ingresar">
-	</form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputNombreDePila">Nombre de pila</label>
+                    <input type="email" class="form-control" id="inputNombreDePila">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputApellido">Apellido</label>
+                    <input type="password" class="form-control" id="inputApellido">
+                </div>
+            </div>
 
-    <script>
-		const form = document.getElementById('form');
+            <div class="fomr-row">
+                <label for="nombreDeUsuario">Nombre de usuario</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="nombreDeUsuario" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
 
-		form.onsubmit = (e) => {
-			e.preventDefault();
-			const user = document.getElementById('user').value
-			const pass = document.getElementById('pass').value	
-			if(user.includes('@')){
-				if(pass != ""){
-					form.submit()
-				}else{
-					alert("La contraseña no puede estar vacía");
-				}
-			}else{
-				alert("El usuario debe tener un @");
-			}
-		}
-	</script>
+            <div class="form-group">
+                <label for="inputCorreoElectronico">Correo electronico <span class="text-muted">(opcional)</span></label>
+                <input type="text" class="form-control" id="inputCorreoElectronico" placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+                <label for="inputHablaA">Habla a</label>
+                <input type="text" class="form-control" id="inputHablaA" placeholder="1234 Main St">
+            </div>
+
+            <div class="form-group">
+                <label for="inputDireccion2">Direccion 2 <span class="text-muted">(opcional)</span></label>
+                <input type="text" class="form-control" id="inputDireccion2" placeholder="Apartamento o suite">
+            </div>
+
+
+
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="validationCustom04">País</label>
+                    <select class="custom-select" id="validationCustom04" required>
+                     <option selected disabled value="">Escoger...</option>
+                     <option>...</option>
+                      </select>
+                        <div class="invalid-feedback">
+                        Please select a valid state.
+                     </div>
+                    </div>
+
+                     <div class="form-group col-md-4">
+                        <label for="validationCustom05">Estado</label>
+                        <select class="custom-select" id="validationCustom05" required>
+                         <option selected disabled value="">Escoger...</option>
+                         <option>...</option>
+                          </select>
+                            <div class="invalid-feedback">
+                            Please select a valid state.
+                         </div>
+                        </div>
+            
+              <div class="form-group col-md-2">
+                <label for="inputCodigoPostal">Codigo postal</label>
+                <input type="text" class="form-control" id="inputCodigoPostal">
+              </div>
+            </div>
+
+            <hr>
+
+
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                <label class="form-check-label" for="gridCheck1">
+                  La dirección de envío es la misma que mi dirección de facturación
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck2">
+                  <label class="form-check-label" for="gridCheck2">
+                    Guarde esta información para la próxima vez
+                  </label>
+                </div>
+              </div>
+        </form>
+
 </body>
 </html>
